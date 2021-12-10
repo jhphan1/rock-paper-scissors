@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <script>
+
+// computerPlay function
+    // Use randomNumber function to generate 0, 1, or 2 with equal odds;
+    // If 0, return Rock;
+    // If 1, return Paper;
+    // If 2, return Scissors;
+
+
+// playerPlay function
+function playerPlay() {
+    // Ask user to enter Rock, Paper, or Scissors and set it to playerSelection;
+    let playerSelection = prompt("Please choose Rock, Paper, or Scissors")
+
+    // Error check the input:
+        // Make input all lowercase so that it is case-insensitive;
+    playerSelection = playerSelection.toLowerCase();
+        // If input is not rock, paper, or scissors, ask user for input again;
+        // Use while loop to keep prompting until user doesn't mess up;
+    keepGoing = true;
+    while (keepGoing) {
+        if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
+            keepGoing = false;
+            return playerSelection;
+        } else {
+            playerSelection = prompt("Error. Please choose Rock, Paper, or Scissors");
+            playerSelection = playerSelection.toLowerCase();
+        }
+    }
+}
+    
+
+// playRound(playerSelection, computerSelection) function
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === "rock") {
+        if (computerSelection === "scissors") {
+            playerScore++;
+            return "You Win! Rock beats Scissors!";
+        }
+        if (computerSelection === "paper") {
+            computerScore++;
+            return "You Lose! Paper beats Rock!";
+        }
+        return "Tie!";
+    }
+
+    if (playerSelection === "paper") {
+        if (computerSelection === "rock") {
+            playerScore++;
+            return "You Win! Paper beats Rock!"
+        }
+        if (computerSelection === "scissors") {
+            computerScore++;
+            return "You Lose! Scissors beat Paper!";
+        }
+        return "Tie!";
+    }
+
+    if (playerSelection === "scissors") {
+        if (computerSelection === "paper") {
+            playerScore++;
+            return "You Win! Scissors beat Paper!";
+        }
+        if (computerSelection === "rock") {
+            computerScore++;
+            return "You Lose! Rock beats Scissors!";
+        }
+        return "Tie!";
+    }
+}
+// test
+let playerScore = 0;
+let computerScore = 0;
+
+console.log(playRound("rock", "scissors"));
+console.log(playerScore);
+console.log(computerScore);
+
+// game function
+    // Define playerScore int variable;
+    // Define computerScore int variable;
+    
+    // Create for loop that iterates 5 times;
+    // Run playerPlay function;
+    // Run computerPlay function;
+    // Run playRound function;
+    // Console.log what playRound function returns;
+
+    // After loop ends, compare playerScore vs computerScore;
+    // If playerScore > computerScore:
+        // return "You are the overall winner after 5 rounds!"
+    // If playerScore < computerScore:
+        // return "The computer is the overall winner after 5 rounds :("
+    // Else:
+        // return "It was a tie after 5 rounds."
+
+
+// main function
+    // console.log(game)
+
+    </script>
+</body>
+</HTML>
