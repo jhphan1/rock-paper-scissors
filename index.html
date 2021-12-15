@@ -8,10 +8,14 @@
     <script>
 
 // computerPlay function
+function computerPlay() {
     // Use randomNumber function to generate 0, 1, or 2 with equal odds;
-    // If 0, return Rock;
-    // If 1, return Paper;
-    // If 2, return Scissors;
+    let x = Math.floor(Math.random() * 3);
+    return x === 0 ? "rock" 
+        : x === 1 ? "paper" 
+        : x === 2 ? "scissors"
+        : "Error";
+}
 
 
 // playerPlay function
@@ -75,24 +79,21 @@ function playRound(playerSelection, computerSelection) {
         return "Tie!";
     }
 }
-// test
-let playerScore = 0;
-let computerScore = 0;
 
-console.log(playRound("rock", "scissors"));
-console.log(playerScore);
-console.log(computerScore);
 
 // game function
-    // Define playerScore int variable;
-    // Define computerScore int variable;
-    
+function game() {   
     // Create for loop that iterates 5 times;
     // Run playerPlay function;
     // Run computerPlay function;
     // Run playRound function;
     // Console.log what playRound function returns;
-
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound(playerPlay(), computerPlay()));
+        console.log(`Current Player Score: ${playerScore}`);
+        console.log(`Current Computer Score: ${computerScore}`);
+    }
+    
     // After loop ends, compare playerScore vs computerScore;
     // If playerScore > computerScore:
         // return "You are the overall winner after 5 rounds!"
@@ -100,10 +101,19 @@ console.log(computerScore);
         // return "The computer is the overall winner after 5 rounds :("
     // Else:
         // return "It was a tie after 5 rounds."
-
+    return playerScore > computerScore ? "You are the overall winner after 5 rounds!"
+        : playerScore < computerScore ? "The computer is the overall winner after 5 rounds :("
+        : "It was a tie after 5 rounds.";
+}
+    
 
 // main function
-    // console.log(game)
+// Define playerScore int variable;
+let playerScore = 0;
+// Define computerScore int variable;
+let computerScore = 0;
+ 
+console.log(game());
 
     </script>
 </body>

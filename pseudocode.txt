@@ -1,0 +1,60 @@
+computerPlay function
+    Use randomNumber function to generate 0, 1, or 2 with equal odds;
+    If 0, return Rock;
+    If 1, return Paper;
+    If 2, return Scissors;
+
+playerPlay function
+    Ask user to enter Rock, Paper, or Scissors and set it to playerSelection;
+    Error check the input:
+        Make input all lowercase so that it is case-insensitive;
+        If input is not rock, paper, or scissors, ask user for input again;
+
+playRound(playerSelection, computerSelection) function
+    If playerSelection is Rock:
+        If computerSelection is Scissors:
+            increment playerScore;
+            return "You Win! Rock beats Scissors!"
+        If computerSelection is Paper:
+            increment computerScore;
+            return "You Lose! Paper beats Rock!"
+        return "Tie!" (none of the above scenarios)
+    If playerSelection is Paper:
+        If computerSelection is Rock:
+            increment playerScore;
+            return "You Win! Paper beats Rock!"
+        If computerSelection is Scissors:
+            increment computerScore;
+            return "You Lose! Scissors beat Paper!"
+        return "Tie!" (none of the above scenarios)
+    If playerSelection is Scissors:
+        If computerSelection is Paper:
+            increment playerScore;
+            return "You Win! Scissors beat Paper!"
+        If computerSelection is Rock:
+            increment computerScore;
+            return "You Lose! Rock beats Scissors!"
+        return "Tie!" (none of the above scenarios)
+
+game function
+    Define playerScore int variable;
+    Define computerScore int variable;
+    
+    Create for loop that iterates 5 times;
+    Run playerPlay function;
+    Run computerPlay function;
+    Run playRound function;
+    Console.log what playRound function returns;
+
+    After loop ends, compare playerScore vs computerScore;
+    If playerScore > computerScore:
+        return "You are the overall winner after 5 rounds!"
+    If playerScore < computerScore:
+        return "The computer is the overall winner after 5 rounds :("
+    Else:
+        return "It was a tie after 5 rounds."
+
+
+main function
+    console.log(game)
+
