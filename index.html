@@ -7,18 +7,29 @@
     <link href="style.css" rel="stylesheet"></link>
 </head>
 <body>
-    <h2>You are humanity's last hope. Beat the Computer in Rock, Paper, Scissors. First to 5 wins...</h2>
+    <div class="header">
+        <h2>Game of Squid</h2>
+        <h4>Beat the computer to survive. First to 5 wins.</h4>
+    </div>
+
     <div class="buttons">
         <button class="rock">ROCK</button>
         <button class="paper">PAPER</button>
         <button class="scissors">SCISSORS</button>
     </div>
-    <div class="container">
-        <div class="matchup">---</div>
-        <div class="result">---</div>
+
+    <div class="text-container">
+        <div class="matchup">---</div><br>
+        <div class="result">---</div><br>
+        <div class="winner">---</div>
+    </div>
+    
+    <div class="score-container">
         <div class="scoreboard">Player: <span class="playerScoreboard">0</span></div>
         <div class="scoreboard">Computer: <span class="computerScoreboard">0</span></div>
-        <div class="winner"></div>
     </div>
+
+    <audio class="tink" src="sounds/tink.wav"></audio>
+
 </body>
 </HTML>

@@ -92,12 +92,20 @@ function playRound(e) {
     
     if (playerScore === 5) {
         winner.textContent = "YOU BEAT THE COMPUTER!!!"
+        // stop the game
         buttons.forEach(button => button.removeEventListener("click", playRound));
+        // change background color to gold
+        const background = document.querySelector("body");
+        background.style.cssText = "background-color: rgba(252, 194, 3, 0.5);"
+
     }
 
     if (computerScore === 5) {
         winner.textContent = "THE COMPUTER BEAT YOU!!!"
         buttons.forEach(button => button.removeEventListener("click", playRound));
+        // change background color to red
+        const background = document.querySelector("body");
+        background.style.cssText = "background-color: rgba(256, 0, 0, 0.5);"
     }
 }
 
@@ -126,3 +134,10 @@ let computerScore = 0;
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach(button => button.addEventListener("click", playRound));
+
+// Add eventlistener to buttons so that they play a sound
+buttons.forEach(button => button.addEventListener("click", () => {
+    let audio = document.querySelector(".tink");
+    audio.currentTime = 0;
+    audio.play();
+}))

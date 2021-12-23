@@ -10,15 +10,44 @@ html {
 }
 
 body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    text-align: center;
+}
+
+h4,
+.text-container {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.winner {
+    font-weight: bolder;
 }
 
 button {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    height: 200px;
-    width: 200px;
+    height: 120px;
+    width: 120px;
     border: solid white 2px;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px grey;
+    box-shadow: 0px 0px 5px grey;
+    font-family: "Game Of Squids", Helvetica, sans-serif;
+    transition: all 0.3s ease;
+    margin: 16px;
+}
+
+button:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
 }
